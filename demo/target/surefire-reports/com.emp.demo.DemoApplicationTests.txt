@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.emp.demo.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.994 s <<< FAILURE! - in com.emp.demo.DemoApplicationTests
+contextLoads  Time elapsed: 0.008 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+Caused by: org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+Caused by: org.apache.kafka.common.KafkaException: org.apache.kafka.common.KafkaException: Failed to load SSL keystore C:\Users\RQ981UL\Downloads\demo\src\main\webapp\confluent_cloud_cacert.jks of type JKS
+Caused by: org.apache.kafka.common.KafkaException: Failed to load SSL keystore C:\Users\RQ981UL\Downloads\demo\src\main\webapp\confluent_cloud_cacert.jks of type JKS
+Caused by: java.nio.file.NoSuchFileException: C:\Users\RQ981UL\Downloads\demo\src\main\webapp\confluent_cloud_cacert.jks
+
