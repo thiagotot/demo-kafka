@@ -1,0 +1,89 @@
+{
+  "type":"record",
+  "name":"QuotationAVRO",
+  "namespace":"com.intercab.commercial.api.kafka.avro",
+  "fields":[
+    {
+      "name":"quotationId",
+      "type":"long"
+    },
+    {
+      "name":"clientName",
+      "type":"string"
+    },
+    {
+      "name":"statusQuotation",
+      "type":"long"
+    },
+    {
+      "name":"portOfLoad",
+      "type":"string"
+    },
+    {
+      "name":"portOfDischarge",
+      "type":"long"
+    },
+    {
+      "name":"portOfTransshipment",
+      "type":"string"
+    },
+    {
+      "name":"size",
+      "type":"string"
+    },
+    {
+      "name":"equipmentType",
+      "type":"string"
+    },
+    {
+      "name":"ownership",
+      "type":"string"
+    },
+    {
+      "name":"rateCurrency",
+      "type":"string"
+    },
+    {
+      "name":"action",
+      "type":"string"
+    },
+    {
+      "name":"quotationDateFrom",
+      "type":{"logicalType": "date", "type": "int"}
+    },
+    {
+      "name":"customerType",
+      "type":"string"
+    },
+    {
+      "name": "associatedProducts",
+      "type": {
+        "type" : "array",
+        "name" : "inner_associatedProducts",
+        "items" : {
+          "name" : "AssociatedProductsAVRO",
+          "type" : "record",
+          "fields" : [
+            {"name":"quotationId", "type":"long"},
+            {"name":"productId", "type":"long"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "associatedProductInstances",
+      "type": {
+        "type" : "array",
+        "name" : "associatedProductInstances",
+        "items" : {
+          "name" : "AssociatedProductInstancesAVRO",
+          "type" : "record",
+          "fields" : [
+            {"name":"quotationProductId", "type":"long"},
+            {"name":"instancesId", "type":"long"}
+          ]
+        }
+      }
+    }
+  ]
+}

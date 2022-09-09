@@ -1,8 +1,12 @@
 package com.emp.demo;
 
+import com.alianca.intercab.emp.transactionreturn.Place;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.avro.Schema;
+import org.apache.avro.generic.GenericData;
+import org.apache.avro.generic.GenericRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -15,12 +19,19 @@ public class TopicProducer {
 
     private String topicName;
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, Place> kafkaTemplate;
 
     public void send(String message) {
-        topicName = "ANL.intercab.quotation.topic.internal.any.v1";
+        topicName = "ANL.intercab.transactionreturn.topic.internal.any.v1";
         log.info("Payload enviado: {}", message);
-        kafkaTemplate.send(topicName, message);
+
+        Place place = new Place();
+        place.setReturnCode("A");
+        place.setTransactionId(1);
+        place.setExternalSystemName("Teste");
+
+
+        kafkaTemplate.send(topicName, place);
     }
 
 }

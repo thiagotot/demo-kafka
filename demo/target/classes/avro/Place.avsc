@@ -1,0 +1,19 @@
+{
+  "fields": [
+    {
+      "name": "TransactionId",
+      "type": "int"
+    },
+    {
+      "name": "ExternalSystemName",
+      "type": "string"
+    },
+    {
+      "name": "ReturnCode",
+      "type": "string"
+    }
+  ],
+  "name": "Place",
+  "namespace": "com.alianca.intercab.emp.transactionreturn",
+  "type": "record"
+}

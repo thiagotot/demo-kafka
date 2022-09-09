@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TopicListener {
 
+    /*
     private String topicName;
 
     @KafkaListener(topics = "ANL.intercab.quotation.topic.internal.any.v1", groupId = "ANL.intercab.pricingarchcdt.consumerGroup.v1")
@@ -23,5 +24,5 @@ public class TopicListener {
         log.info("Order: {}", payload.value());
 
     }
-
+*/
 }
